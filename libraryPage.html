@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="library.js" defer></script>
+    <link rel="stylesheet" href="library.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title-bar">
+      <h1>The Odin Project</h1>
+      <button class="Form-button" id="formButton" onclick="popUp()">
+        Add Book
+      </button>
+    </div>
+    <div class="Book-details">
+      <h2>Title</h2>
+      <h2>Author</h2>
+      <h2>Genre</h2>
+      <h2>Read</h2>
+    </div>
+    <div class="bottom-part-of-page">
+      <div id="library-display" class="library"></div>
+    </div>
+    <div class="Book-form-background" id="bookFormBg">
+      <div class="Book-form">
+        <label for="bookName">Name of the book: </label>
+        <input type="text" name="bookName" id="bookName" required />
+        <label for="bookAuthor">The Author:</label>
+        <input type="text" name="bookAuthor" id="bookAuthor" required />
+        <label for="bookGenre">The Genre: </label>
+        <input type="text" name="bookGenre" id="bookGenre" required />
+        <label for="bookGenre">
+          Read before:
+          <input type="checkbox" name="bookRead" id="bookRead" required />
+        </label>
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+          "
+        >
+          <button
+            class="add-book-button"
+            id="addBookButton"
+            onclick="sendBook()"
+          >
+            Add Book
+          </button>
+          <button class="close-button" id="closeButton" onclick="popDown()">
+            close
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  background-color: #eff5d2;
+}
+
+* {
+  box-sizing: border-box;
+}
+.library {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  gap: 0.5vh;
+}
+.Book-details,
+.book-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal columns */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.book-card {
+  position: relative;
+  background-color: #8fa31e;
+  color: #eff5d2;
+  padding: 1vmin;
+  margin-top: 1vmin;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  align-items: center;
+  height: 7vh;
+}
+.book-card h1,
+h2 {
+  margin: 0;
+  margin-top: 0.5vmax;
+  margin-bottom: 0.5vmax;
+  font-size: 2.5vmin;
+}
+
+.title-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vmin;
+  background-color: #556b2f;
+  border-bottom: 1px solid black;
+  color: #e5e9c5;
+}
+.title-bar h1 {
+  margin-right: 60vw;
+}
+.Book-details {
+  font-size: 2vmin;
+  color: #556b2f;
+  background-color: #c6d870;
+}
+.Form-button {
+  border: 0;
+  background-color: #8fa31e;
+  width: 7vw;
+  height: 4.3vh;
+  border-radius: 5px;
+  margin-right: 1vw;
+  color: #e5e9c5;
+}
+.Form-button:hover {
+  cursor: pointer;
+  background-color: #768618;
+}
+.Book-form-background {
+  position: fixed; /* sits on top of everything */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* translucent dark overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* ensures it's above all other elements */
+}
+.Book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  background-color: #c6d870;
+  width: 15vw;
+  padding: 4vmin;
+  border-radius: 5px;
+}
+.add-book-button,
+.close-button {
+  width: 5.5vw;
+  height: 3.8vh;
+  border: 0;
+  background-color: #8fa31e;
+  color: #c6d870;
+  border-radius: 3px;
+  font-size: 75%;
+}
+.add-book-button:hover,
+.close-button:hover {
+  cursor: pointer;
+  background-color: #768618;
+}
