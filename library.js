@@ -8,6 +8,7 @@ template.innerHTML = `
   <h2 class="author"></h2>
   <h2 class="genre"></h2>
   <input type="checkbox" class="read" > 
+  <button class="close-button-card" onClick=deleteBook(this)> X </button>
 </div>
 `;
 
@@ -40,13 +41,16 @@ const genreInput = document.getElementById("bookGenre");
 const readInput = document.getElementById("bookRead");
 
 function renderCards() {
+  libraryHolder.innerHTML = "";
   library.forEach((book) => {
     const clone = template.content.cloneNode(true);
+    clone.querySelector(".book-card").id = book.id;
     clone.querySelector(".title").textContent = `${book.name}`;
     clone.querySelector(".author").textContent = `${book.author}`;
     clone.querySelector(".genre").textContent = `${book.genre}`;
     clone.querySelector(".read").disabled = true;
     clone.querySelector(".read").checked = book.previewed;
+    clone.querySelector(".close-button-card").id = book.id;
     console.log(`${book.previewed}`);
     libraryHolder.appendChild(clone);
   });
@@ -70,7 +74,14 @@ function sendBook() {
     `${genreInput.value}`,
     `${readInput.value}`
   );
-  libraryHolder.innerHTML = "";
   renderCards();
   popDown();
+}
+function deleteBook(button) {
+  library.forEach((book, index) => {
+    if (book.id === button.id) {
+      library.splice(index, 1);
+    }
+  });
+  renderCards();
 }

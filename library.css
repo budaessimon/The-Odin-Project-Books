@@ -20,7 +20,7 @@ body {
 .Book-details,
 .book-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal columns */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* 4 equal columns */
   align-items: center;
   text-align: center;
   width: 100%;
@@ -113,6 +113,19 @@ h2 {
 }
 .add-book-button:hover,
 .close-button:hover {
+  cursor: pointer;
+  background-color: #768618;
+}
+.close-button-card {
+  border: 0;
+  margin-left: 10vw;
+  width: 2vw;
+  height: 3.8vh;
+  border-radius: 3px;
+  background-color: #8fa31e;
+  color: #c6d870;
+}
+.close-button-card:hover {
   cursor: pointer;
   background-color: #768618;
 }
