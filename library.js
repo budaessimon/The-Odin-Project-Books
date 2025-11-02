@@ -51,11 +51,12 @@ function renderCards() {
     clone.querySelector(".read").disabled = true;
     clone.querySelector(".read").checked = book.previewed;
     clone.querySelector(".close-button-card").id = book.id;
-    console.log(`${book.previewed}`);
+
     libraryHolder.appendChild(clone);
   });
 }
 renderCards();
+
 function popUp() {
   popup.style.display = "flex";
 }
@@ -64,7 +65,7 @@ function popDown() {
   bookInput.value = "";
   authorInput.value = "";
   genreInput.value = "";
-  readInput.value = false;
+  readInput.checked = false;
 }
 
 function sendBook() {
@@ -72,8 +73,9 @@ function sendBook() {
     `${bookInput.value}`,
     `${authorInput.value}`,
     `${genreInput.value}`,
-    `${readInput.value}`
+    readInput.checked
   );
+  console.log(readInput.value);
   renderCards();
   popDown();
 }
